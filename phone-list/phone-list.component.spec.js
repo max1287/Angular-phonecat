@@ -2,7 +2,7 @@
 
 describe('phoneList', function () {
 
-    beforeEach(module('phonecatApp'));
+    beforeEach(module('phoneList'));
 
     describe('PhoneListController', function () {
         it('should create a \'phones\' model with 3 phones', inject(function ($componentController) {

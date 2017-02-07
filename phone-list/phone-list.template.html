@@ -1,0 +1,19 @@
+﻿<div class="container-fluid">
+     <div class="row">
+         <div class="col-md-2">
+            Search: <input ng-model="$ctrl.query" />
+         </div>
+         <div class="col-md-10">
+             <br />
+             <p>Search line: <span ng-bind="$ctrl.query"></span></p>
+             <h4>Total number of phones: {{($ctrl.phones| filter: $ctrl.query).length}}</h4>
+             <ul>
+                 <li ng-repeat="phone in $ctrl.phones | filter: $ctrl.query">
+                     <span ng-bind="phone.name"></span>
+                     <p>{{phone.snippet}}</p>
+                 </li>
+             </ul>
+         </div>
+     </div>
+</div>
+
