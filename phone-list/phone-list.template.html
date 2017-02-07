@@ -22,17 +22,20 @@
              <br />
              <p>Search line: <span ng-bind="$ctrl.query"></span></p>
              <p>Ordered by: <span ng-bind="$ctrl.orderProp"></span></p>
-
              <p>Desc by: <span ng-bind="$ctrl.desc"></span></p>
              <h4>Total number of phones: {{($ctrl.phones| filter: $ctrl.query).length}}</h4>
-             <ul>
-                 <li ng-repeat="phone in $ctrl.phones | filter: $ctrl.query | orderBy: ''+$ctrl.desc+$ctrl.orderProp">
-                     <span ng-bind="phone.name"></span>
+             
+             <ul class="phones">
+                 <li ng-repeat="phone in $ctrl.phones | filter: $ctrl.query | orderBy: ''+$ctrl.desc+$ctrl.orderProp" class="thumbnail">
+                     <a href="#/phones/{{phone.id}}" class="thumb">
+                         <img ng-src="{{phone.imageUrl}}" alt = "{{phone.name}}" />
+                     </a>
+                     <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
                      <p>{{phone.snippet}}</p>
                  </li>
              </ul>
+
          </div>
      </div>
 </div>
-<pre>{{$ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp | json}}</pre>
 
