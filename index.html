@@ -6,19 +6,19 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <script src="bower_components/angular/angular.js"></script>
     <script src="app.js"></script>
+    <script src="phone-list.component.js"></script>
   </head>
-  <body ng-controller="PhoneListController">
-      <p>Hello, {{name}}!</p>
-      <ul>
-          <li ng-repeat="phone in phones">
-              {{phone.name}}
-              <p>{{phone.snippet}}</p>
-          </li>
-      </ul>
-      <p>Total number of phones: {{phones.length}}</p>
-      <table>
-          <tr><td ng-repeat="n in [0,1,2,3,4,5,6,7]">Column #{{n}}</td></tr>
-          <tr ng-repeat="i in [0,1,2,3,4,5,6,7]"><td ng-repeat="j in [0,1,2,3,4,5,6,7]">{{(i+1)*(j+1)}}</td></tr>
-      </table>
+  <body>
+      <div class="row">
+          <div class="col-md-4">
+              <phone-list></phone-list>
+          </div>
+          <div class="col-md-4">
+              <phone-list></phone-list>
+          </div>
+          <div class="col-md-4">
+              <phone-list></phone-list>
+          </div>
+      </div>
   </body>
 </html>
