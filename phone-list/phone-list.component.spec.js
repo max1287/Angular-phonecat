@@ -4,7 +4,7 @@ describe('phoneList', function () {
 
     beforeEach(module('phoneList'));
 
-    describe('controller', function () {
+    describe('PhoneListController', function () {
         var $httpBackend, ctrl;
         beforeEach(inject(function ($componentController, _$httpBackend_) {
             $httpBackend = _$httpBackend_;
