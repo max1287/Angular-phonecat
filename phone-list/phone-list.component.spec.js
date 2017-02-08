@@ -6,6 +6,7 @@ describe('phoneList', function () {
 
     describe('PhoneListController', function () {
         var $httpBackend, ctrl;
+
         beforeEach(inject(function ($componentController, _$httpBackend_) {
             $httpBackend = _$httpBackend_;
             $httpBackend.expectGET('phones/phones.json')
@@ -14,7 +15,10 @@ describe('phoneList', function () {
         }));
 
         it('should create a \'phones\' property with 2 phones fetched with \'$http\'', function () {
-            expect(ctrl.phones).toBeUndefined();
+            
+            jasmine.addCustomEqualityTester(angular.equals);
+
+            expect(ctrl.phones).toEqual([]);
             $httpBackend.flush();
             expect(ctrl.phones).toEqual([{ name: 'Nexus S' }, { name: 'Motorola DROID' }]);
         });
